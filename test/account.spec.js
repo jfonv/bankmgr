@@ -2,8 +2,8 @@ let expect = require('chai').expect;
 let a = require('../lib/account');
 //require('../lib/account');
 
-describe('account', function(){
 describe('Account', function(){
+describe('constructor', function(){
   it('should create new account', function() {
     const result = new a.Account('name', 400);
     expect(result.name).to.equal('name');
