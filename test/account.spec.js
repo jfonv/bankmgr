@@ -1,11 +1,16 @@
 let expect = require('chai').expect;
-let account = require('../lib/account');
+let a = require('../lib/account');
+//require('../lib/account');
 
+describe('account', function(){
 describe('Account', function(){
-describe('Account', function(){
-  it('should do shit', function() {
-    const result = [1,2,3].mymap(n=>n*n);
-    expect(result).to.have.length(3);
+  it('should create new account', function() {
+    const result = new a.Account('name', 400);
+    expect(result.name).to.equal('name');
+    expect(result.balance).to.equal(400);
+    expect(result.num).is.not.undefined;
+    expect(result.deposits).to.deep.equal([400]);
+    expect(result.withdrawals).to.deep.equal([]);
   });
 });
 });
