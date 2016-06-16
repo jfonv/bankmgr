@@ -36,4 +36,16 @@ describe('Bank', () => {
       expect(result.getValue()).to.equal(4090);
     });
   });
+  describe('#timeTravel', () => {
+    it('should travel through the ages', () => {
+      const result = new Bank("Whoville's Travelling Bank");
+      expect(result.getValue()).to.equal(0);
+      expect(result.timeTravel(1492)).to.equal('Cristoforo Colombo');
+      expect(result.timeTravel(1957)).to.equal('Sputnik');
+      expect(result.timeTravel(1)).to.equal('Babby Jesus');
+      expect(result.timeTravel(2016)).to.equal('Welcome Home');
+      expect(result.timeTravel(1960)).to.equal('lost in time');
+      expect(result.timeTravel()).to.equal('lost in time');
+    });
+  });
 });
